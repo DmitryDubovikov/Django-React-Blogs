@@ -1,0 +1,4 @@
+django==4.2.3
+environs==9.5.0
+flake8==6.0.0
+pre-commit==3.3.3
