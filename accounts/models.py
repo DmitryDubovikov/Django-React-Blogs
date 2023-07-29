@@ -1,10 +1,14 @@
 import uuid
 
-from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
-                                        PermissionsMixin)
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.http import Http404
+
+
+def user_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    return f"user_{instance.public_id}/{filename}"
 
 
 class UserManager(BaseUserManager):
@@ -62,7 +66,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     updated = models.DateTimeField(auto_now_add=True)
 
     bio = models.TextField(null=True)
-    # avatar = models.ImageField(null=True, blank=True, upload_to=user_directory_path)
+    avatar = models.ImageField(null=True, blank=True, upload_to=user_directory_path)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]

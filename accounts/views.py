@@ -1,11 +1,12 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
+from abstract.views import AbstractViewSet
 from .models import User
 from .serializers import UserSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(AbstractViewSet):
     http_method_names = ("patch", "get")
     permission_classes = (IsAuthenticated,)
     serializer_class = UserSerializer
