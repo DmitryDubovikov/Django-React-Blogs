@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "auth.apps.AuthConfig",
     "post.apps.PostConfig",
+    "comment.apps.CommentConfig",
     # external apps
     "rest_framework",
     "rest_framework_simplejwt",
