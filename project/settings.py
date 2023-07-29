@@ -51,8 +51,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # internal apps
-    "accounts",
+    "accounts.apps.AccountsConfig",
     "auth.apps.AuthConfig",
+    "post.apps.PostConfig",
     # external apps
     "rest_framework",
     "rest_framework_simplejwt",
