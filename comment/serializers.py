@@ -23,8 +23,17 @@ class CommentSerializer(AbstractSerializer):
         rep = super().to_representation(instance)
         author = User.objects.get_object_by_public_id(rep["author"])
         rep["author"] = UserSerializer(author).data
-
         return rep
+
+    def validate_post(self, value):
+        if self.instance:
+            return self.instance.post
+        return value
+
+    def validate_author(self, value):
+        if self.context["request"].user != value:
+            raise ValidationError("You can't create a post for another user.")
+        return value
 
     class Meta:
         model = Comment
