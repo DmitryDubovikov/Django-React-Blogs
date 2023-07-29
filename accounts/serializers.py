@@ -10,7 +10,6 @@ class UserSerializer(AbstractSerializer):
         model = User
         # List of all the fields that can be included in a request or a response
         fields = [
-            # "id",
             "username",
             "name",
             "first_name",
@@ -19,9 +18,7 @@ class UserSerializer(AbstractSerializer):
             "avatar",
             "email",
             "is_active",
-            # "created",
-            # "updated",
-            "posts_count",
+            # "posts_count",
         ]
         # List of all the fields that can only be read by the user
         read_only_field = ["is_active"]
