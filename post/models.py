@@ -1,6 +1,6 @@
 from django.db import models
 
-from abstract.models import AbstractModel, AbstractManager
+from abstract.models import AbstractManager, AbstractModel
 
 # from accounts.models import User
 
