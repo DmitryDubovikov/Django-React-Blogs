@@ -1,9 +1,10 @@
+from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
+
 from abstract.serializers import AbstractSerializer
 from accounts.models import User
 from accounts.serializers import UserSerializer
 from post.models import Post
-from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
 
 from .models import Comment
 

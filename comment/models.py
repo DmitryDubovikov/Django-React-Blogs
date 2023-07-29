@@ -1,5 +1,6 @@
-from abstract.models import AbstractManager, AbstractModel
 from django.db import models
+
+from abstract.models import AbstractManager, AbstractModel
 
 
 class CommentManager(AbstractManager):
