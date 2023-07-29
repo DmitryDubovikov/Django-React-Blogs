@@ -10,6 +10,7 @@ class UserSerializer(AbstractSerializer):
         model = User
         # List of all the fields that can be included in a request or a response
         fields = [
+            "public_id",
             "username",
             "name",
             "first_name",
