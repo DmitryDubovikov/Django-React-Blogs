@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
 from abstract.views import AbstractViewSet
+
 from .models import User
 from .serializers import UserSerializer
 

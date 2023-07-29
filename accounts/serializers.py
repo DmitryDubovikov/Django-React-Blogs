@@ -1,8 +1,8 @@
-from rest_framework import serializers
 from django.conf import settings
+from rest_framework import serializers
 
-from accounts.models import User
 from abstract.serializers import AbstractSerializer
+from accounts.models import User
 
 
 class UserSerializer(AbstractSerializer):
