@@ -58,9 +58,9 @@ class TestPostViewSet:
     def test_retrieve_anonymous(self, client, post):
         response = client.get(self.endpoint + str(post.public_id) + "/")
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["public_id"] == str(post.public_id)
+        assert response.data["id"] == str(post.public_id.hex)
         assert response.data["body"] == post.body
-        assert response.data["author"]["id"] == str(post.author.public_id)
+        assert response.data["author"]["public_id"] == str(post.author.public_id)
 
     def test_create_anonymous(self, client):
         data = {"body": "Test Post Body", "author": "test_user"}

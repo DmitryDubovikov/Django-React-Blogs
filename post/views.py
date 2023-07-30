@@ -10,8 +10,13 @@ from post.serializers import PostSerializer
 
 class PostViewSet(AbstractViewSet):
     http_method_names = ("post", "get", "put", "delete")
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = PostSerializer
+
+    def get_permissions(self):
+        if self.request.method == "GET":
+            return []
+        return [IsAuthenticated()]
 
     def get_queryset(self):
         return Post.objects.all()
