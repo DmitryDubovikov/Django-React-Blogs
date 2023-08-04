@@ -9,7 +9,7 @@ function UpdatePost(props) {
   const [showToast, setShowToast] = useState(false);
   const [validated, setValidated] = useState(false);
   const [form, setForm] = useState({
-    author: post.author.id,
+    author: post.author.public_id,
     body: post.body,
   });
 
