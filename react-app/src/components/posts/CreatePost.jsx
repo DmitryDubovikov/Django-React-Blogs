@@ -29,7 +29,7 @@ function CreatePost(props) {
     setValidated(true);
 
     const data = {
-      author: user.id,
+      author: user.public_id,
       body: form.body,
     };
 
@@ -41,11 +41,12 @@ function CreatePost(props) {
         setToastType("success");
         setForm({});
         setShowToast(true);
-        refresh();
+        // refresh();
       })
-      .catch(() => {
+      .catch((error) => {
         setToastMessage("An error occurred.");
         setToastType("danger");
+        console.error("Произошла ошибка:", error);
       });
   };
 
