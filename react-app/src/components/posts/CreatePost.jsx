@@ -41,7 +41,7 @@ function CreatePost(props) {
         setToastType("success");
         setForm({});
         setShowToast(true);
-        // refresh();
+        // refresh(); // TypeError: refresh is not a function at CreatePost.jsx:44:1"
       })
       .catch((error) => {
         setToastMessage("An error occurred.");
