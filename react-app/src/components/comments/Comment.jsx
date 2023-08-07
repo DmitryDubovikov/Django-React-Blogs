@@ -7,7 +7,7 @@ import axiosService from "../../helpers/axios";
 import { getUser } from "../../hooks/user.actions";
 // import UpdateComment from "./UpdateComment";
 import { Context } from "../Layout";
-// import MoreToggleIcon from "../MoreToggleIcon";
+import MoreToggleIcon from "../MoreToggleIcon";
 
 function Comment(props) {
   const { postId, comment, refresh } = props;
@@ -68,17 +68,19 @@ function Comment(props) {
           {user.name === comment.author.name && (
             <div>
               <Dropdown>
-                {/* <Dropdown.Toggle as={MoreToggleIcon}></Dropdown.Toggle>
+                <Dropdown.Toggle as={MoreToggleIcon}></Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <UpdateComment
+                  {/* <UpdateComment
                     comment={comment}
                     refresh={refresh}
                     postId={postId}
                   />
+
+                  */}
                   <Dropdown.Item onClick={handleDelete} className="text-danger">
                     Delete
                   </Dropdown.Item>
-                </Dropdown.Menu> */}
+                </Dropdown.Menu>
               </Dropdown>
             </div>
           )}
