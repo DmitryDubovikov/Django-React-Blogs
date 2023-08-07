@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
+import SinglePost from "./pages/SinglePost";
 import Login from "./pages/Login";
 
 function App() {
@@ -13,6 +14,14 @@ function App() {
         element={
           <ProtectedRoute>
             <Home />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/post/:postId/"
+        element={
+          <ProtectedRoute>
+            <SinglePost />
           </ProtectedRoute>
         }
       />
