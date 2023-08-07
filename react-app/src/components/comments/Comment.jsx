@@ -5,7 +5,7 @@ import { Image, Card, Dropdown } from "react-bootstrap";
 import { randomAvatar } from "../../utils";
 import axiosService from "../../helpers/axios";
 import { getUser } from "../../hooks/user.actions";
-// import UpdateComment from "./UpdateComment";
+import UpdateComment from "./UpdateComment";
 import { Context } from "../Layout";
 import MoreToggleIcon from "../MoreToggleIcon";
 
@@ -70,13 +70,11 @@ function Comment(props) {
               <Dropdown>
                 <Dropdown.Toggle as={MoreToggleIcon}></Dropdown.Toggle>
                 <Dropdown.Menu>
-                  {/* <UpdateComment
+                  <UpdateComment
                     comment={comment}
                     refresh={refresh}
                     postId={postId}
                   />
-
-                  */}
                   <Dropdown.Item onClick={handleDelete} className="text-danger">
                     Delete
                   </Dropdown.Item>
