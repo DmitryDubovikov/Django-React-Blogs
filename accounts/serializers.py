@@ -6,6 +6,11 @@ from accounts.models import User
 
 
 class UserSerializer(AbstractSerializer):
+    posts_count = serializers.SerializerMethodField()
+
+    def get_posts_count(self, instance):
+        return instance.post_set.all().count()
+
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         if not representation["avatar"]:
@@ -29,7 +34,7 @@ class UserSerializer(AbstractSerializer):
             "avatar",
             "email",
             "is_active",
-            # "posts_count",
+            "posts_count",
         ]
         # List of all the fields that can only be read by the user
         read_only_field = ["is_active"]
