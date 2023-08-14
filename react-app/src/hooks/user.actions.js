@@ -9,6 +9,7 @@ function useUserActions() {
     login,
     register,
     logout,
+    edit,
   };
 
   // Login the user
@@ -28,6 +29,27 @@ function useUserActions() {
       navigate("/");
     });
   }
+
+    // Edit the user
+    function edit(data, userId) {
+      return axiosService
+        .patch(`${baseURL}/user/${userId}/`, data, {
+          headers: {
+            "content-type": "multipart/form-data",
+          },
+        })
+        .then((res) => {
+          // Registering the account in the store
+          localStorage.setItem(
+            "auth",
+            JSON.stringify({
+              access: getAccessToken(),
+              refresh: getRefreshToken(),
+              user: res.data,
+            })
+          );
+        });
+    
 
   // Logout the user
   function logout() {
