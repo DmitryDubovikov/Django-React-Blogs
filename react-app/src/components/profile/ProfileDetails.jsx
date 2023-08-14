@@ -27,7 +27,7 @@ function ProfileDetails(props) {
           <p className="fs-6">
             <small>{user.posts_count} posts</small>
           </p>
-          {user.id === getUser().public_id && (
+          {user.public_id === getUser().public_id && (
             <Button
               variant="primary"
               size="sm"
