@@ -10,10 +10,6 @@ import { Row, Col } from "react-bootstrap";
 function Profile() {
   const { profileId } = useParams();
 
-  console.log("#######");
-  console.log(profileId);
-  console.log("#######");
-
   const user = useSWR(`/user/${profileId}/`, fetcher);
 
   const posts = useSWR(`/post/?author__public_id=${profileId}`, fetcher, {

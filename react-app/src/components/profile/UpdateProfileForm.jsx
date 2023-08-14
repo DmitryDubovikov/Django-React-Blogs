@@ -50,7 +50,8 @@ function UpdateProfileForm(props) {
     }
 
     userActions
-      .edit(formData, profile.id)
+      // .edit(formData, profile.id)
+      .edit(formData, profile.public_id)
       .then(() => {
         setToaster({
           type: "success",
