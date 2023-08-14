@@ -2,6 +2,8 @@ import React from "react";
 import { randomAvatar } from "../utils";
 import { Navbar, Container, Image, NavDropdown, Nav } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { getUser, useUserActions } from "../hooks/user.actions";
 
 function Navigationbar() {
   const navigate = useNavigate();
@@ -9,6 +11,10 @@ function Navigationbar() {
     localStorage.removeItem("auth");
     navigate("/login/");
   };
+
+  const userActions = useUserActions();
+
+  const user = getUser();
 
   return (
     <Navbar bg="primary" variant="dark">
@@ -28,7 +34,9 @@ function Navigationbar() {
                 />
               }
             >
-              <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={`/profile/${user.public_id}/`}>
+                Profile
+              </NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>

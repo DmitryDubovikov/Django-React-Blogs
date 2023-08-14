@@ -27,12 +27,12 @@ function ProfileDetails(props) {
           <p className="fs-6">
             <small>{user.posts_count} posts</small>
           </p>
-          {user.id === getUser().id && (
+          {user.id === getUser().public_id && (
             <Button
               variant="primary"
               size="sm"
               className="w-25"
-              onClick={() => navigate(`/profile/${user.id}/edit/`)}
+              onClick={() => navigate(`/profile/${user.public_id}/edit/`)}
             >
               Edit
             </Button>
