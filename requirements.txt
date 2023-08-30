@@ -11,3 +11,4 @@ isort==5.12.0
 drf-nested-routers==0.93.4
 pytest_django==4.5.2
 django-cors-headers==4.2.0
+gunicorn==20.1.0
